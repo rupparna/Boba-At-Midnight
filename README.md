@@ -31,4 +31,6 @@ open `index.html`. that's it. no installs, no build stuff.
 @Ruppie09 🖤
 
 enjoyyy
+LIVE URL: https://rupparna.github.io/Boba-At-Midnight/
+
 <img width="960" height="463" alt="image" src="https://github.com/user-attachments/assets/2ff9b46a-bdbb-4064-af17-d16023d79921" />
