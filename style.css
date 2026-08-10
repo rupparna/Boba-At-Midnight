@@ -1,0 +1,145 @@
+body{
+    font-family: 'Courier New', monospace;
+    background-color:#0d0d0d;
+    background-image: linear-gradient(#151515 1px, transparent 1px), linear-gradient(90deg, #151515 1px, transparent 1px);
+  background-size: 30px 30px;
+  color: #e6e6e6;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  line-height: 1.6;}
+
+  header{
+    background-color:#1a0000; 
+    color: #f2f2f2;
+    text-align: center;
+    padding: 40px 15px;
+   border-bottom: 3px solid #8b0000;
+  }
+  header h1{
+    margin: 0;
+    font-size: 2.2em;
+    color: #ff4d4d;
+    letter-spacing: 2px;
+  }
+
+  .tagline{
+    margin-top: 8px;
+    color: #cccccc;
+  }
+
+  main{
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-bottom:25px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+
+  }
+
+  h2{
+    margin-top: 0;
+    color:#ff4d4d ;
+  }
+  .special-title{
+    color:#ff8080 ;
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+  .featured-img{
+    text-align: center;
+    margin: 20px 0;
+  }
+  .featured-img img{
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    border: 3px solid #8b0000;
+
+  }
+  .featured-img figcaption{
+    margin-top: 8px;
+    font-size :0px;
+    color: #999;
+    font-style: italic;
+  }
+  .drink:hover{
+border-color: #ff4d4d;
+  background-color: #221111;
+  }
+
+  .drink h3{
+    margin-top: 0;
+    margin-bottom: 5px;
+    color:#ffb3b3 ;
+  }
+  .price{
+    float: right;
+    color:#ff4d4d;
+    font-weight: bold;
+  }
+  .warning{
+    background-color:#2b0000;
+    border-color: #ff4d4d;
+  }
+  .warning h2{
+     color: #ff1a1a;
+  }
+  .secret{
+    background-color: #101820;
+  border-color: #444;
+  }
+  .secret summary{
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    color: #cfd8dc;
+  }
+
+  .secret-content{
+    margin-top: 10px;
+  }
+  .form-title{
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  .order input[
+    type="radio"], 
+    .order input[type="checkbox"]
+  {
+    margin-right: 8px;
+    transform: scale(1.2);
+  }
+  .order button{
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #8b0000;
+  color: #f2f2f2;
+  border: 2px solid #ff4d4d;
+  border-radius: 8px;
+  cursor: pointer;
+  }
+  .order button:hover{
+    background-color:#ff1a1a; 
+     color: #000;
+  }
+  footer {
+  text-align: center;
+  font-size: 0.9em;
+  color: #999;
+  padding: 15px;
+}
+.order-result{
+  text-align: center;
+}
+.back-link {
+  display: block;
+  text-align: center;
+  color: #ff8080;
+  margin-bottom: 25px;
+}
+
+.back-link:hover {
+  color: #ff4d4d;
+}
