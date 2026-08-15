@@ -16,13 +16,19 @@ body{
     padding: 40px 15px;
    border-bottom: 3px solid #8b0000;
   }
-  header h1{
+ header h1{
     margin: 0;
     font-size: 2.2em;
     color: #ff4d4d;
     letter-spacing: 2px;
+    text-shadow: 0 0 8px #ff4d4d, 0 0 20px #ff1a1a, 0 0 40px #8b0000;
+    animation: flicker 4s infinite;
   }
 
+  @keyframes flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+    20%, 22%, 24%, 55% { opacity: 0.4; }
+  }
   .tagline{
     margin-top: 8px;
     color: #cccccc;
@@ -63,9 +69,32 @@ body{
     color: #999;
     font-style: italic;
   }
-  .drink:hover{
-border-color: #ff4d4d;
-  background-color: #221111;
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at 20% 30%, rgba(139,0,0,0.12), transparent 45%),
+                radial-gradient(circle at 80% 70%, rgba(80,0,80,0.10), transparent 50%);
+    background-size: 200% 200%;
+    animation: driftFog 25s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+@keyframes driftFog {
+    0%   { background-position: 0% 0%, 100% 100%; }
+    50%  { background-position: 100% 50%, 0% 50%; }
+    100% { background-position: 0% 0%, 100% 100%; }
+}
+  .drink{
+    border: 2px solid transparent;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+  }
+.drink:hover{
+    border-color: #ff4d4d;
+    background-color: #221111;
   }
 
   .drink h3{
@@ -80,14 +109,20 @@ border-color: #ff4d4d;
   }
   .warning{
     background-color:#2b0000;
-    border-color: #ff4d4d;
+    border: 2px solid #ff4d4d;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin-bottom: 25px;
   }
   .warning h2{
      color: #ff1a1a;
   }
   .secret{
     background-color: #101820;
-  border-color: #444;
+    border: 2px solid #444;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin-bottom: 25px;
   }
   .secret summary{
     font-size: 1.1em;
@@ -142,4 +177,52 @@ border-color: #ff4d4d;
 
 .back-link:hover {
   color: #ff4d4d;
+}
+fieldset {
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 15px;
+}
+legend {
+    padding: 0 6px;
+}
+.option {
+    display: block;
+    margin: 6px 0;
+}
+.fortune {
+    text-align: center;
+    background-color: #101820;
+    border: 2px solid #444;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin-bottom: 25px;
+}
+.fortune button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #8b0000;
+    color: #f2f2f2;
+    border: 2px solid #ff4d4d;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.fortune button:hover {
+    background-color: #ff1a1a;
+    color: #000;
+}
+.drink h3 {
+    transition: transform 0.15s ease;
+}
+.drink:hover h3 {
+    animation: glitchShake 0.25s ease;
+}
+@keyframes glitchShake {
+    0%   { transform: translate(0,0); }
+    25%  { transform: translate(-1px, 1px); }
+    50%  { transform: translate(1px, -1px); }
+    75%  { transform: translate(-1px, -1px); }
+    100% { transform: translate(0,0); }
 }

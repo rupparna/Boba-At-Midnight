@@ -13,16 +13,16 @@
         <header>
             <h1>WELCOME TO BOBA AFTER DARK 👻🧋</h1>
             <p class="tagline">Open: 11:59PM- ???</p>
+            <p class="tagline" id="live-clock">Checking the hour...</p>
         </header>
 
         <main>
 <section class="special">
             <h2>Tonight's Special🌘</h2>
             <p class="special-title">THE BLACK PEARL⚫✨</p>
-            <p>Served pitch-black with a metallic aftertaste. You'll hear a soft whispering after the 1st sip</p>
+          <p>Served pitch-black with a metallic aftertaste. You'll hear a soft whispering after the 1st sip</p>
+        </section>
 
-
-      </figure>
       <section class="menu">
         <h2>🌛Midnight Menu</h2>
         <article class="drink">
@@ -60,7 +60,13 @@
 </details>
 
                    
-          </section>
+         </section>
+
+            <section class="fortune">
+              <h2>🔮 Get Your Fortune</h2>
+              <p id="fortune-text">Click below if you dare to know what tonight holds.</p>
+              <button type="button" id="fortune-btn">Read My Fortune</button>
+            </section>
 
     <section class="order">
         <h2>Midnight Order Form🏮📜</h2>
@@ -97,7 +103,24 @@
         <footer>
     <p>© BOBA AFTER DARK — Founded at 11:59 PM. Made by @Ruppie09.</p>
   </footer>
-        
-
+        <script>
+      function updateClock(){
+        const now = new Date();
+        const h = now.getHours(), m = now.getMinutes();
+        const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute:'2-digit' });
+        const clockEl = document.getElementById('live-clock');
+        if (!clockEl) return;
+        if (h === 0 && m < 15) {
+          clockEl.textContent = "🕛 It is currently the witching hour... we're watching.";
+          clockEl.style.color = "#ff1a1a";
+        } else {
+          clockEl.textContent = "Current time: " + timeStr + " — the pearls are listening.";
+          clockEl.style.color = "#cccccc";
+        }
+      }
+      updateClock();
+      setInterval(updateClock, 30000);
+    </script>
+<script src="script.js"></script>
     </body>
 </html>
