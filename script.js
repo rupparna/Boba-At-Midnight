@@ -11,17 +11,22 @@ const fortunes = [
 ];
 
 
-// Background Music Setup
-const bgMusic = new Audio('leberch-creepy-spooky-piano-262593.mp3');
+
+const bgMusic = new Audio('./leberch-creepy-spooky-piano-262593.mp3');
 bgMusic.loop = true;
 bgMusic.volume = 0.3; 
 
 const startBgMusic = () => {
   bgMusic.play().then(() => {
-    
+
     document.removeEventListener('click', startBgMusic);
-  }).catch(err => console.log(err));
+  }).catch(err => {
+    console.error("Audio playback error:", err);
+  });
 };
+
+
+document.addEventListener('click', startBgMusic);
 
 
 document.addEventListener('click', startBgMusic);
