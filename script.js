@@ -11,14 +11,17 @@ const fortunes = [
 ];
 
 
-const fortuneText = document.getElementById('fortune-text');
-const fortuneBtn = document.getElementById('fortune-btn');
+// Background Music Setup
+const bgMusic = new Audio('leberch-creepy-spooky-piano-262593.mp3');
+bgMusic.loop = true;
+bgMusic.volume = 0.3; 
+
+const startBgMusic = () => {
+  bgMusic.play().then(() => {
+    
+    document.removeEventListener('click', startBgMusic);
+  }).catch(err => console.log(err));
+};
 
 
-fortuneBtn.addEventListener('click', () => {
-  
-  const randomIndex = Math.floor(Math.random() * fortunes.length);
-  
-  
-  fortuneText.textContent = fortunes[randomIndex];
-});
+document.addEventListener('click', startBgMusic);
